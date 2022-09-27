@@ -1,0 +1,35 @@
+img {
+    object-fit: contain;
+    object-position: center;
+    max-width: 75px;
+    max-height: 75px;
+    margin: 0 auto;
+    display: block;
+}
+
+h2 {
+    text-align: center;
+}
+
+.tecnologias {
+    border: 2px solid black;
+    padding: .3rem;
+    margin: .5rem auto;
+    text-align: center;
+    width: 80%;
+    font-weight: bold;
+}
+
+@media (min-width:768px) {
+    .tecnologias {
+        width: 100%;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+label {
+    text-align: center;
+}

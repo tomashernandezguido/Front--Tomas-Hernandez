@@ -1,0 +1,15 @@
+<section *ngIf="persona != null">
+    <h2>{{ persona.nombre }} {{ persona.apellido }}</h2>
+    <button (click)="editarPersona()">Editar persona</button>
+    <form *ngIf="editar">
+        <div class="field-set">
+            <label for="">Nombre</label>
+            <input name="nombre" type="text" [value]="persona.nombre" [(ngModel)]="form.nombre">
+        </div>
+        <div class="field-set">
+            <label for="">Apellido</label>
+            <input name="apellido" type="text" [(ngModel)]="form.apellido" [value]="persona.apellido">
+        </div>
+        <button (click)="enviar()">Editar</button>
+    </form>
+</section>

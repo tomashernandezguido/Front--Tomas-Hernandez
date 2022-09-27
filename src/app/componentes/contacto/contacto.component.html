@@ -1,0 +1,7 @@
+<section *ngIf="contactos != null && contactos.length > 0">
+    <h2>Formas de Contacto</h2>
+    <section class="contacto" *ngFor="let contacto of contactos">
+        <h3>{{ contacto.descripcion }}</h3>
+        <p>{{ contacto.contacto }}</p>
+    </section>
+</section>

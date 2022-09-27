@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+form {
+    border: 3px solid #1A261C;
+    padding: 3rem;
+    margin: 1rem .5rem;
+    border-radius: 10px;
+}
+
+label,
+input {
+    padding: .5rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.field-set {
+    text-align: center;
+}
+
+@media (min-width: 468px) {
+    .field-set {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    form {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    form {
+        width: 50%;
+    }
+}
+
+@media (min-width: 996px) {
+    form {
+        width: 30%;
+    }
+}
+
+button {
+    display: block;
+    margin: 1rem auto;
+    background-color: white;
+    padding: .5rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+table {
+    max-width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+    border: 5px solid #1A261C;
+    padding: 1rem;
+}
+
+th,
+td {
+    padding: .5rem;
+    white-space: nowrap;
+}

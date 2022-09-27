@@ -1,0 +1,73 @@
+nav {
+    display: block;
+}
+
+a {
+    cursor: pointer;
+}
+
+@media (min-width: 468px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+section {
+    display: block;
+    color: #1A261C;
+}
+
+@media (min-width: 480px) {
+    section {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+section section {
+    display: block;
+}
+
+img {
+    margin: .5rem auto;
+    display: block;
+    padding: 1rem;
+    width: 150px;
+    object-fit: contain;
+    object-position: center;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: 5px solid gray;
+    margin: .5rem;
+    color: #1A261C;
+}
+
+.botonera {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .botonera {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

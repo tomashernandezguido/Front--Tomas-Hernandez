@@ -1,0 +1,40 @@
+<section *ngIf="tecnologias != null" style="overflow-x: auto;">
+    <h2>Tecnologías</h2>
+    <button (click)="abrirCreacion()">Crear Tecnología</button>
+    <form *ngIf="formOpen" [formGroup]="form">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" formControlName="nombre">
+        </div>
+        <div>
+            <label for="">Nivel</label>
+            <input type="text" formControlName="nivel">
+        </div>
+        <div>
+            <label for="">Imagen</label>
+            <input type="file" (change)="subirArchivo($event)">
+        </div>
+        <button *ngIf="!edicion; else editar" (click)="crearTecnologia()">Crear</button>
+        <ng-template #editar>
+            <button (click)="editarTecnologia()">Editar</button>
+        </ng-template>
+        <button (click)="formOpen = false">Cancelar</button>
+    </form>
+    <table *ngIf="tecnologias.length > 0">
+        <tr>
+            <th>Nombre</th>
+            <th>Nivel</th>
+            <th>Imagen</th>
+            <th>Acción</th>
+        </tr>
+        <tr *ngFor="let tecnologia of tecnologias">
+            <td>{{ tecnologia.nombre }}</td>
+            <td>{{ tecnologia.nivel }}</td>
+            <td><img [src]="obtenerImagen(tecnologia.imagen)" [alt]="'Imagen de ' + tecnologia.nombre"></td>
+            <td class="field-set">
+                <button (click)="abrirEdicion(tecnologia)">Editar</button>
+                <button (click)="borrarTecnologia(tecnologia.id)">Borrar</button>
+            </td>
+        </tr>
+    </table>
+</section>

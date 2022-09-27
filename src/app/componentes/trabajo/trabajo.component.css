@@ -1,0 +1,38 @@
+section {
+    background-color: #1A261C;
+    color: white;
+    padding: 2rem;
+}
+
+time {
+    color: #A3BFA7;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    display: block;
+    padding: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+.trabajo {
+    background-color: #2C402D;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .trabajo {
+        width: 70%;
+    }
+}
+
+@media (min-width: 996px) {
+    .trabajo {
+        width: 50%;
+    }
+}

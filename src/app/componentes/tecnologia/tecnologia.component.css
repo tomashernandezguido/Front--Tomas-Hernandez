@@ -1,0 +1,47 @@
+section {
+    color: #1A261C;
+    background-color: white;
+    padding: 1rem;
+}
+
+@media (min-width: 468px) {
+    section .tecnologia {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+    section .tecnologia {
+        width: 50%;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 1rem 0;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.barra {
+    margin: 0;
+    background-color: #1A261C;
+    min-height: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.nivel {
+    background-color: #5E8C61;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    color: #1A261C;
+}

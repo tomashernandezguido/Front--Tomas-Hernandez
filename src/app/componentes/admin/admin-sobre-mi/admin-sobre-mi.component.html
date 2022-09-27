@@ -1,0 +1,35 @@
+<section *ngIf="sobreMi != null" style="overflow-x: auto;">
+    <h2>Sobre mi</h2>
+    <table>
+        <tr>
+            <th>Profesion</th>
+            <th>Sobre Mi</th>
+            <th>Imagen</th>
+            <th>Accion</th>
+        </tr>
+        <tr>
+            <td>{{ sobreMi.profesion }}</td>
+            <td>{{ sobreMi.sobreMi }}</td>
+            <td><img [src]="obtenerImagen(sobreMi.imagen)" alt=""></td>
+            <td><button (click)="editarSobreMi(sobreMi)">Editar</button></td>
+        </tr>
+    </table>
+    <form *ngIf="editar" [formGroup]="form">
+        <div class="field-set">
+            <label for="">Profesion</label>
+            <input type="text" formControlName="profesion">
+        </div>
+        <div class="field-set">
+            <label for="">Sobre Mi</label>
+            <input type="text" formControlName="sobreMi" name="sobre-mi">
+        </div>
+        <div class="field-set">
+            <label for="">Imagen</label>
+            <input type="file" (change)="subirArchivo($event)">
+        </div>
+        <div class="field-set">
+            <button (click)="enviarDatos()">Enviar</button>
+            <button (click)="editar = false">Cancelar</button>
+        </div>
+    </form>
+</section>

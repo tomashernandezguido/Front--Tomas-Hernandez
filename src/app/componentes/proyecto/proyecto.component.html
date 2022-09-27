@@ -1,0 +1,12 @@
+<section *ngIf="proyectos != null && proyectos.length > 0">
+    <h2>Proyectos</h2>
+    <section class="proyecto" *ngFor="let proyecto of proyectos">
+        <img [src]="obtenerImagen(proyecto.imagen)" alt="">
+        <h3>{{ proyecto.nombre }}</h3>
+        <p>{{ proyecto.descripcion }}</p>
+        <section class="imagenesGrid">
+            <img class="tecnologia" *ngFor="let tecnologia of proyecto.tecnologias" [src]="obtenerImagen(tecnologia.imagen)" alt="">
+        </section>
+        <a *ngIf="proyecto.sitio != null" [href]="proyecto.sitio">Visitar</a>
+    </section>
+</section>

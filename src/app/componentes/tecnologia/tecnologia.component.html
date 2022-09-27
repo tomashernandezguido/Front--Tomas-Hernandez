@@ -1,0 +1,9 @@
+<section *ngIf="tecnologias != null && tecnologias.length > 0">
+    <h2>Tecnologías</h2>
+    <section class="tecnologia" *ngFor="let tecnologia of this.tecnologias">
+        <p>{{ tecnologia.nombre }}</p>
+        <div class="barra">
+            <div class="nivel" [style.width]="tecnologia.nivel + '%'"></div>
+        </div>
+    </section>
+</section>

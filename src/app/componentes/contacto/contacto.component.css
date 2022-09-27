@@ -1,0 +1,41 @@
+section {
+    background-color: #1A261C;
+    padding: 2rem;
+}
+
+h2 {
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+section .contacto {
+    background-color: #A3BFA7;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+h3 {
+    margin: 0;
+    color: #1A261C;
+    text-align: center;
+    padding: 1rem;
+}
+
+p {
+    color: #1A261C;
+    margin: 0;
+    font-weight: bold;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+    section .contacto {
+        width: 50%;
+        margin: 1rem auto;
+    }
+}

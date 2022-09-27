@@ -1,0 +1,8 @@
+<section *ngIf="institutos != null && institutos.length > 0">
+    <h2>Educación</h2>
+    <section *ngFor="let instituto of institutos">
+        <h3>{{ instituto.instituto }}</h3>
+        <time>{{ obtenerFecha(instituto.fechaInicio) }} - {{ obtenerFecha(instituto.fechaFinalizacion) }}</time>
+        <p>{{ instituto.titulo }}</p>
+    </section>
+</section>

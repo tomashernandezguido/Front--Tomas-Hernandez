@@ -1,0 +1,18 @@
+<header>
+    <nav>
+        <section>
+            <img src="assets/arg-programa.png" alt="Logo" (click)="irAlInicio()">
+            <section>
+                <p>Argentina Programa</p>
+                <p>Yo Programo</p>
+            </section>
+        </section>
+        <section class="botonera">
+            <a href="login" *ngIf="!token; else logeado">Iniciar sesion</a>
+            <ng-template #logeado>
+                <a (click)="deslogear()">Cerrar Sesión</a>
+                <a href="admin">Administrador</a>
+            </ng-template>
+        </section>
+    </nav>
+</header>

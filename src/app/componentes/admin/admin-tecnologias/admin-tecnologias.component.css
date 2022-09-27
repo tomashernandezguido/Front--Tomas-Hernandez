@@ -1,0 +1,16 @@
+h2 {
+    text-align: center;
+}
+
+img {
+    object-fit: contain;
+    object-position: center;
+    max-width: 75px;
+    max-height: 75px;
+    margin: 0 auto;
+    display: block;
+}
+
+section {
+    padding: .5rem;
+}

@@ -1,0 +1,11 @@
+<form>
+    <div class="field-set">
+        <label for="">Usuario</label>
+        <input type="text" [(ngModel)]="form.usuario" name="usuario">
+    </div>
+    <div class="field-set">
+        <label for="">Password</label>
+        <input type="password" [(ngModel)]="form.password" name="password">
+    </div>
+    <button class="botonFormulario" (click)="logear()">Iniciar Sesión</button>
+</form>

@@ -1,0 +1,7 @@
+<section *ngIf="sobreMi != null">
+    <img *ngIf="imagen != null" [src]="imagen" alt="">
+    <div>
+        <p>{{ sobreMi.profesion }}</p>
+        <p>{{ sobreMi.sobreMi }}</p>
+    </div>
+</section>

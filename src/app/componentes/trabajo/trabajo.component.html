@@ -1,0 +1,9 @@
+<section *ngIf="trabajos != null && trabajos.length > 0">
+    <h2>Experiencia Laboral</h2>
+    <section class="trabajo" *ngFor="let trabajo of trabajos">
+        <h3>{{ trabajo.nombreEmpresa }}</h3>
+        <time>{{ obtenerFecha(trabajo.fechaInicio) }} - {{ obtenerFecha(trabajo.fechaFinalizacion) }}</time>
+        <p>{{ trabajo.rol }}</p>
+        <p>{{ trabajo.descripcionTrabajo }}</p>
+    </section>
+</section>

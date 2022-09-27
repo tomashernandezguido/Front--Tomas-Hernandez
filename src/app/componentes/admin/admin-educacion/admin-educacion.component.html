@@ -1,0 +1,50 @@
+<section *ngIf="institutos != null" style="overflow-x: auto;">
+    <h2>Educación</h2>
+    <button (click)="abrirFormularioCreacion()">Crear Instituto</button>
+    <form *ngIf="formOpen" [formGroup]="form">
+        <div>
+            <label for="">Instituto</label>
+            <input type="text" formControlName="instituto">
+        </div>
+        <div>
+            <label for="">Título</label>
+            <input type="text" formControlName="titulo">
+        </div>
+        <div>
+            <label for="">Fecha Inicio</label>
+            <input type="date" formControlName="fechaInicio">
+        </div>
+        <div>
+            <label for="">Fecha Finalización</label>
+            <input type="date" formControlName="fechaFinalizacion">
+        </div>
+        <div>
+            <label for="">Presente</label>
+            <input type="checkbox" formControlName="presente" (change)="disableFechaFinalizacion()">
+        </div>
+        <button *ngIf="!edicion; else editar" (click)="crearEducacion()">Crear</button>
+        <ng-template #editar>
+            <button (click)="editarEducacion()">Editar</button>
+        </ng-template>
+        <button (click)="formOpen = false">Cancelar</button>
+    </form>
+    <table *ngIf="institutos.length > 0">
+        <tr>
+            <th>Instituto</th>
+            <th>Título</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Finalización</th>
+            <th>Acción</th>
+        </tr>
+        <tr *ngFor="let instituto of institutos">
+            <td>{{ instituto.instituto }}</td>
+            <td>{{ instituto.titulo }}</td>
+            <td>{{ instituto.fechaInicio }}</td>
+            <td>{{ obtenerFecha(instituto.fechaFinalizacion) }}</td>
+            <td class="field-set">
+                <button (click)="abrirFormularioEdicion(instituto)">Editar</button>
+                <button (click)="borrarEducacion(instituto.id)">Borrar</button>
+            </td>
+        </tr>
+    </table>
+</section>

@@ -1,0 +1,93 @@
+section {
+    padding: 2rem;
+    background-color: #A3BFA7;
+}
+
+a {
+    color: white;
+    margin: 1rem auto;
+    display: block;
+    padding: .5rem;
+    border: 3px solid #5E8C61;
+    max-width: max-content;
+    border-radius: 5px;
+}
+
+img {
+    object-fit: contain;
+    object-position: center;
+    max-height: 200px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.proyecto {
+    padding: 0 0 1rem 0;
+    text-align: center;
+    background-color: #1A261C;
+    margin: 1rem;
+    color: white;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    color: #1A261C;
+}
+
+h3 {
+    display: block;
+    margin: 1rem;
+}
+
+p {
+    display: block;
+}
+
+.tecnologia {
+    object-fit: contain;
+    object-position: center;
+    min-height: 50px;
+    max-height: 100px;
+}
+
+.proyecto section {
+    padding: 0;
+    background-color: #1A261C;
+}
+
+.imagenesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 1rem;
+}
+
+.tecnologia {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .proyecto {
+        width: 70%;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width: 468px) {
+    .imagenesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .imagenesGrid {
+        width: 70%;
+        margin: 1rem auto;
+    }
+}

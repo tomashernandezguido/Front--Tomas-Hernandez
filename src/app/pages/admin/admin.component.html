@@ -1,0 +1,13 @@
+<h2 *ngIf="!persona">Cargando...</h2>
+<app-admin-persona [persona]="personaBasica"></app-admin-persona>
+<app-admin-sobre-mi *ngIf="personaBasica != null" [persona]="personaBasica" [sobreMi]="persona?.sobreMi">
+</app-admin-sobre-mi>
+<app-admin-contactos *ngIf="persona != null" [contactos]="persona.contactos" [personaId]="persona.id">
+</app-admin-contactos>
+<app-admin-tecnologias *ngIf="persona != null" [tecnologias]="persona.tecnologias" [personaId]="persona.id">
+</app-admin-tecnologias>
+<app-admin-educacion *ngIf="persona != null" [institutos]="persona.institutos" [personaId]="persona.id">
+</app-admin-educacion>
+<app-admin-proyecto *ngIf="persona != null" [proyectos]="persona.proyectos" [personaId]="persona.id" [tecnologias]="persona.tecnologias">
+</app-admin-proyecto>
+<app-admin-trabajo *ngIf="persona != null" [trabajos]="persona.trabajos" [personaId]="persona.id"></app-admin-trabajo>

@@ -1,0 +1,56 @@
+<section *ngIf="trabajos != null" style="overflow-x: auto;">
+    <h2>Trabajos</h2>
+    <button (click)="abrirFormularioCreacion()">Crear Trabajo</button>
+    <form *ngIf="formOpen" [formGroup]="form">
+        <div>
+            <label for="">Nombre Empresa</label>
+            <input type="text" formControlName="nombreEmpresa">
+        </div>
+        <div>
+            <label for="">Descripción</label>
+            <input type="text" formControlName="descripcion">
+        </div>
+        <div>
+            <label for="">Rol</label>
+            <input type="text" formControlName="rol">
+        </div>
+        <div>
+            <label for="">Fecha Inicio</label>
+            <input type="date" formControlName="fechaInicio">
+        </div>
+        <div>
+            <label for="">Fecha Finalización</label>
+            <input type="date" formControlName="fechaFinalizacion">
+        </div>
+        <div>
+            <label for="">Presente</label>
+            <input type="checkbox" formControlName="presente" (change)="disableFechaFinalizacion()">
+        </div>
+        <button *ngIf="!edicion; else editar" (click)="crearTrabajo()">Crear</button>
+        <ng-template #editar>
+            <button (click)="editarTrabajo()">Editar</button>
+        </ng-template>
+        <button (click)="formOpen = false">Cancelar</button>
+    </form>
+    <table *ngIf="trabajos.length > 0">
+        <tr>
+            <th>Nombre Empresa</th>
+            <th>Descripción Trabajo</th>
+            <th>Rol</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Finalización</th>
+            <th>Acción</th>
+        </tr>
+        <tr *ngFor="let trabajo of trabajos">
+            <td>{{ trabajo.nombreEmpresa }}</td>
+            <td>{{ trabajo.descripcionTrabajo }}</td>
+            <td>{{ trabajo.rol }}</td>
+            <td>{{ trabajo.fechaInicio }}</td>
+            <td>{{ obtenerFecha(trabajo.fechaFinalizacion) }}</td>
+            <td class="field-set">
+                <button (click)="abrirFormularioEdicion(trabajo)">Editar</button>
+                <button (click)="borrarTrabajo(trabajo.id)">Borrar</button>
+            </td>
+        </tr>
+    </table>
+</section>

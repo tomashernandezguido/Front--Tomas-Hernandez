@@ -1,0 +1,53 @@
+<section *ngIf="proyectos" style="overflow-x: auto;">
+    <h2>Proyectos</h2>
+    <button (click)="abrirFormularioCreacion()">Crear Proyecto</button>
+    <form *ngIf="formOpen" [formGroup]="form">
+        <div>
+            <label for="">Nombre</label>
+            <input type="text" formControlName="nombre">
+        </div>
+        <div>
+            <label for="">Descripción</label>
+            <input type="text" formControlName="descripcion">
+        </div>
+        <div>
+            <label for="">Sitio</label>
+            <input type="text" formControlName="sitio">
+        </div>
+        <div>
+            <label for="">Imagen</label>
+            <input type="file" (change)="subirArchivo($event)">
+        </div>
+        <div class="grid">
+            <div *ngFor="let tecnologia of tecnologias" class="tecnologias" (click)="actualizarTecnologiasId(tecnologia.id)" [ngStyle]="aplicarEstilos(tecnologia.id)">
+                <p>{{ tecnologia.nombre }}</p>
+            </div>
+        </div>
+        <button *ngIf="!edicion; else editar" (click)="crearProyecto()">Crear</button>
+        <ng-template #editar>
+            <button (click)="editarProyecto()">Editar</button>
+        </ng-template>
+        <button (click)="formOpen = false">Cancelar</button>
+    </form>
+    <table *ngIf="proyectos.length > 0">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Sitio</th>
+            <th>Imagen</th>
+            <th>Tecnologías</th>
+            <th>Acción</th>
+        </tr>
+        <tr *ngFor="let proyecto of proyectos">
+            <td>{{ proyecto.nombre }}</td>
+            <td>{{ proyecto.descripcion }}</td>
+            <td>{{ proyecto.sitio }}</td>
+            <td><img [src]="obtenerImagen(proyecto.imagen)" [alt]="'Imagen de ' + proyecto.nombre" *ngIf="proyecto.imagen != null"></td>
+            <td>{{ obtenerTecnologias(proyecto.tecnologias) }}</td>
+            <td class="field-set">
+                <button (click)="abrirFormularioEdicion(proyecto)">Editar</button>
+                <button (click)="borrarProyecto(proyecto.id)">Borrar</button>
+            </td>
+        </tr>
+    </table>
+</section>
